@@ -1,28 +1,30 @@
 import { Nav } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
-export default function Works() {
+function Works() {
     return (
         <section>
-            <h2>Works App</h2>
-            <Nav variant="tabs" defaultActiveKey="web">
+            <h2>Our Works</h2>
+            <Nav variant="tabs" defaultActiveKey="/web">
                 <Nav.Item>
-                    <Link className="nav-link active" to="web">
+                    <NavLink className="nav-link" to="web">
                         WebSites
-                    </Link>
+                    </NavLink>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link className="nav-link" to="js">
-                        JavaScript
-                    </Link>
+                    <NavLink className="nav-link" to="scripts">
+                        JavaScripts
+                    </NavLink>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link className="nav-link" to="apps">
-                        Apps
-                    </Link>
+                    <NavLink className="nav-link" to="apps">
+                        Applications
+                    </NavLink>
                 </Nav.Item>
             </Nav>
             <Outlet />
         </section>
     );
 }
+
+export default Works;

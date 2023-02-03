@@ -1,7 +1,9 @@
-export default function Home() {
+function Home() {
     return (
         <section>
-            <h2>Home App</h2>
+            <h2>Main Page</h2>
         </section>
     );
 }
+
+export default Home;

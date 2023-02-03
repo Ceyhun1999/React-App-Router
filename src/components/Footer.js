@@ -1,7 +1,9 @@
-export default function Footer() {
+function Footer() {
     return (
-        <footer className="bg-dark text-center text-light py-3">
-            <div className="container ">Copyright 2023</div>
+        <footer className="bg-dark text-light text-center py-3">
+            Copyright © {new Date().getFullYear()}
         </footer>
     );
 }
+
+export default Footer;

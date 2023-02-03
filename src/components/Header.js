@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
-export default function Header() {
+function Header({ setPage }) {
     return (
         <header>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -9,20 +9,29 @@ export default function Header() {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Link className="nav-link" to="/">
+                            <NavLink className="nav-link" to=".">
                                 Home
-                            </Link>
-                            <Link className="nav-link" to="/about">
+                            </NavLink>
+                            <NavLink className="nav-link" to="about">
                                 About
-                            </Link>
-                            <Link className="nav-link" to="/works">
+                            </NavLink>
+                            <NavLink className="nav-link" to="works">
                                 Works
-                            </Link>
+                            </NavLink>
                         </Nav>
                         <Nav>
-                            <Link className="nav-link" to="/contact">
+                            <NavLink
+                                className="nav-link"
+                                style={({ isActive }) => ({ color: isActive ? "yellow" : "silver" })}
+                                to="More">
+                                More deets
+                            </NavLink>
+                            <NavLink
+                                className="nav-link"
+                                style={({ isActive }) => ({ color: isActive ? "yellow" : "silver" })}
+                                to="contact">
                                 Contact
-                            </Link>
+                            </NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -30,3 +39,5 @@ export default function Header() {
         </header>
     );
 }
+
+export default Header;
